@@ -16,3 +16,6 @@ get_tides(api_key, station_id, duration = 1)
 \description{
 Returns a \code{tibble} containing data on high and low tides for the specified duration (1 - 7 days)
 }
+\examples{
+find_closest_site(station_id = "0114", duration = 3)
+}

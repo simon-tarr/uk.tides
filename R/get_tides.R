@@ -7,6 +7,8 @@
 #' @param station_id a valid station ID. Can be found by using \code{get_tidal_stations()} or \code{find_closest_tide_station()}
 #' @param duration duration in days over which to return tide data. Must be >=1 or <=7.
 #' @export
+#' @examples
+#' find_closest_site(station_id = "0114", duration = 3)
 
 get_tides<-function(api_key, station_id, duration = 1){
 

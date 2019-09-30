@@ -18,3 +18,7 @@ find_closest_site(lat, long, site_count = 1, cached_sites = NULL)
 \description{
 Calls either \code{forecast_list_sites()} or \code{observations_list_sites()} and returns the closest site to any lat long point.
 }
+\examples{
+find_closest_site(lat = 53.8059821, long = -1.6057714, site_count = 1, cached_sites = NULL)
+
+}

@@ -10,7 +10,7 @@ save_api_key(api_key)
 \item{api_key}{a valid Admirality API Key}
 }
 \description{
-Saves a .rds format file in the current working directory to store API credentials.
-All API functions will fail until you have done this!
-Register for a new key here: https://admiraltyapi.portal.azure-api.net/
+Saves an RDS file in the current working directory to store API credentials.
+All API-dependent functions will fail until you have done this.
+Register for a personal API key here: https://admiraltyapi.portal.azure-api.net/
 }
