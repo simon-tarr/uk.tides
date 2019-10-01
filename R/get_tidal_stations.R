@@ -9,21 +9,18 @@
 
 get_tidal_stations<-function(api_key){
 
-  check_saved_api_key()
-  api_key<-read_api_key()
-
-  stations<-GET("https://admiraltyapi.azure-api.net/uktidalapi/api/V1/Stations/",
+  stations<-httr::GET("https://admiraltyapi.azure-api.net/uktidalapi/api/V1/Stations/",
                 add_headers("Ocp-Apim-Subscription-Key" = api_key)) %>%
-    content(., as = "text") %>%
-    fromJSON(.)
+    httr::content(., as = "text") %>%
+    jsonlite::fromJSON(.)
 
   x<-as_tibble(cbind(stations$features$properties, stations$features$geometry)) %>%
-    select(-ContinuousHeightsAvailable,-Footnote, -type) %>%
+    dplyr::select(-ContinuousHeightsAvailable,-Footnote, -type) %>%
     unnest(coordinates) %>%
     group_by(Name) %>%
     mutate(col=seq_along(Name)) %>%
     spread(key=col, value=coordinates) %>%
-    select(1:3, 5,4) %>%
+    dplyr::select(1:3, 5,4) %>%
     rename(latitude = `2`) %>%
     rename(longitude = `1`)
 

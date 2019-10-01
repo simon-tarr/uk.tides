@@ -12,11 +12,8 @@
 
 get_tides<-function(api_key, station_id, duration = 1){
 
-  check_saved_api_key()
-  api_key<-read_api_key()
-
   tides<-httr::GET(url = paste0("https://admiraltyapi.azure-api.net/uktidalapi/api/V1/Stations/", station_id, paste0("/TidalEvents?duration="), duration), add_headers("Ocp-Apim-Subscription-Key" = api_key)) %>%
-    jsonlite::content(., as="text") %>%
+    httr::content(., as="text") %>%
     jsonlite::fromJSON(.)
 
   return(tides)
