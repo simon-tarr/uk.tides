@@ -1,14 +1,15 @@
-Package: uk.tides
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Package: UKTides
+Title: A small package to query Admiralty Maritime Data Solutions for data on UK high & low tides
+Version: 0.0.1.0
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Simon",
+           family = "Tarr",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: What license it uses
+           email = "si.tarr@outlook.com",
+           comment = c(ORCID = "0000-0001-8464-1240"))
+Description: This package uses the Admiralty Maritime Data Solutions API to download 7-day tide forecasts for the UK. It also includes functionality to find the nearest tide station given a lat/long point within the UK.
+License: MIT
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
+Imports: jsonlite, httr, dplyr, geosphere, readr

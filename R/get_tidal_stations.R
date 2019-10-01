@@ -9,8 +9,9 @@
 
 get_tidal_stations<-function(api_key){
 
-  stations<-httr::GET("https://admiraltyapi.azure-api.net/uktidalapi/api/V1/Stations/",
-                add_headers("Ocp-Apim-Subscription-Key" = api_key)) %>%
+  read_api_key()
+
+  stations<-httr::GET("https://admiraltyapi.azure-api.net/uktidalapi/api/V1/Stations/", httr::add_headers("Ocp-Apim-Subscription-Key" = .GlobalEnv$api_key)) %>%
     httr::content(., as = "text") %>%
     jsonlite::fromJSON(.)
 
