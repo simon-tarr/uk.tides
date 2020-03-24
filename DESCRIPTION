@@ -11,5 +11,5 @@ Description: This package uses the Admiralty Maritime Data Solutions API to down
 License: MIT
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Imports: jsonlite, httr, dplyr, geosphere, readr
